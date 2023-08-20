@@ -15,7 +15,7 @@ interface CarruselProps {
 const Carrusel = ({category}: CarruselProps) => {
   return (
     <>
-      <CategoryTitle title={category?.name} color={category.color} />
+      <CategoryTitle title={category?.name} color={category?.color} />
       <Swiper
         effect={'coverflow'}
         grabCursor={true}
@@ -31,11 +31,11 @@ const Carrusel = ({category}: CarruselProps) => {
         modules={[EffectCoverflow]}
         className="mySwiper"
       >
-        {category.movies.map((movie: Movie) => (
-          <SwiperSlide key={movie.id}>
-            <h3 className='text-white mb-5 text-xl text-center'>{movie.title}</h3>
-            <Link href={movie.video} target='_blank'>
-             <VideoCard color={category.color} movie={movie} />
+        {category?.movies?.map((movie: Movie) => (
+          <SwiperSlide key={movie?.id}>
+            <h3 className='text-white mb-5 text-xl text-center'>{movie?.title}</h3>
+            <Link href={movie?.video} target='_blank'>
+             <VideoCard color={category?.color} movie={movie} />
             </Link>
           </SwiperSlide>
         ))}

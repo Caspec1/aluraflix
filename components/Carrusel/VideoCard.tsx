@@ -18,8 +18,8 @@ const VideoCard = ({movie, color}: VideoCardProp) => {
       ${color === 'yellow' && 'border-yellow-500'}
     `}>
       <Image
-        src={movie.image}
-        alt={movie.title}
+        src={movie?.image}
+        alt={movie?.title}
         width={150}
         height={250}
         className="rounded-lg"
